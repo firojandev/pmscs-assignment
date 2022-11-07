@@ -7,52 +7,54 @@
     android:background="@color/lightGray"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/llTop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/spMainArray"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
-            android:background="@drawable/bg_spinner"/>
-
-        <com.google.android.material.button.MaterialButton
-           android:id="@+id/btnView"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:layout_marginLeft="6dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="View"
-            android:textAllCaps="false"/>
-    </LinearLayout>
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/llTop"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/white"
-        android:elevation="8dp">
+        android:elevation="10dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvResults"
+        <LinearLayout
+            android:id="@+id/llTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No item is selected"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:padding="10dp"/>
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose divisions"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spMainArray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_spinner"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="10dp"
+                android:text="View"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
     </com.google.android.material.card.MaterialCardView>
+
+
 
 
 </RelativeLayout>

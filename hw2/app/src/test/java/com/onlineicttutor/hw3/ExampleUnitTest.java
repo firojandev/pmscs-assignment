@@ -1,4 +1,4 @@
-package com.onlineicttutor.hw2;
+package com.onlineicttutor.hw3;
 
 import org.junit.Test;
 

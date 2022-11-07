@@ -1,15 +1,15 @@
-package com.onlineicttutor.hw2;
+package com.onlineicttutor.hw3;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSpinner;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
+
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textview.MaterialTextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     AppCompatSpinner spinner;
     MaterialButton btnView;
-    MaterialTextView tvResults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void initView() {
         spinner = findViewById(R.id.spMainArray);
         btnView = findViewById(R.id.btnView);
-        tvResults = findViewById(R.id.tvResults);
     }
 
     public void setSpinner() {
@@ -60,14 +58,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 int position = spinner.getSelectedItemPosition();
-                tvResults.setText(districts[position]);
+                //tvResults.setText(districts[position]);
+                Intent myIntent = new Intent(MainActivity.this, ViewActivity.class);
+                myIntent.putExtra("districts", districts[position]);
+                startActivity(myIntent);
             }
         });
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        tvResults.setText("Click view button to see the districts");
     }
 
     @Override

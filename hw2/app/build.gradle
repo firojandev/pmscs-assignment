@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.onlineicttutor.hw2"
+        applicationId "com.onlineicttutor.hw3"
         minSdk 23
         targetSdk 32
         versionCode 1
