@@ -8,9 +8,9 @@
     android:background="@color/lightGray">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_margin="10dp"
         app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
@@ -35,6 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
+                       android:id="@+id/silLogo"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:src="@drawable/logo" />
@@ -73,7 +74,7 @@
                             android:layout_below="@+id/tvPhone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="02-8833047, 01738244446"
+                            android:text="@string/phoneNumber"
                             android:textSize="12sp"
                             android:textStyle="normal"
                             android:textColor="@color/gray"/>
@@ -113,7 +114,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tvEmail"
-                            android:text="altaf@squaregroup.com"
+                            android:text="@string/emailId"
                             android:textColor="@color/gray"
                             android:textSize="12sp"
                             android:textStyle="normal" />
@@ -171,23 +172,25 @@
                 android:layout_weight="0.7">
 
                 <RelativeLayout
+                    android:id="@+id/rlMyProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true">
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/imgPerson"
-                        android:layout_centerHorizontal="true"
                         android:layout_width="76dp"
                         android:layout_height="76dp"
+                        android:layout_centerHorizontal="true"
                         android:src="@drawable/altaf"
-                        app:civ_border_width="4dp"
-                        app:civ_border_color="@color/white"/>
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="4dp" />
 
                     <RelativeLayout
                         android:id="@+id/rlPerson"
-                        android:layout_below="@+id/imgPerson"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/imgPerson"
                         android:layout_marginTop="6dp">
 
                         <TextView
@@ -199,21 +202,67 @@
                             android:textColor="@color/lightGray"
                             android:textSize="14sp"
                             android:textStyle="normal" />
+
                         <TextView
                             android:id="@+id/tvDesignation"
-                            android:layout_below="@+id/tvName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvName"
                             android:layout_centerHorizontal="true"
-                            android:text="Sr. Programmer"
                             android:padding="3dp"
+                            android:text="Sr. Programmer"
+                            android:textColor="@color/gray"
                             android:textSize="12sp"
-                            android:textStyle="normal"
-                            android:textColor="@color/gray"/>
+                            android:textStyle="normal" />
                     </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcBottom"
+        android:layout_below="@+id/mcTop"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgSquareLogo"
+               android:layout_centerInParent="true"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/sq_logo"
+                app:civ_border_width="4dp"
+                app:civ_border_color="@color/white"/>
+
+            <RelativeLayout
+                android:id="@+id/rlCompanyWeb"
+                android:layout_below="@+id/imgSquareLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+                <TextView
+                    android:id="@+id/tvWebsiteURL"
+                    android:layout_marginTop="40dp"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="www.squaregroup.com"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+        </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>
