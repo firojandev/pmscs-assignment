@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,12 +50,16 @@ public class MainActivity extends AppCompatActivity {
         llEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{ "altaf@squaregroup.com"});
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Visiting Card");
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Dynamic Visiting Card");
                 emailIntent.putExtra(Intent.EXTRA_TEXT,"");
                 emailIntent.setType("message/rfc822");
                 startActivity(Intent.createChooser(emailIntent, "Choose"));
+                }catch (android.content.ActivityNotFoundException e) {
+                    Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         llAddress.setOnClickListener(new View.OnClickListener() {
